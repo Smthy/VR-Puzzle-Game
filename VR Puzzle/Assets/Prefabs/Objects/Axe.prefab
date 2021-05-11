@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307529816291317812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.062017277, y: 0.22600234, z: 0.015}
+  m_LocalPosition: {x: 0.07299249, y: 0.22600234, z: 0.007309571}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8043190587296784899}
@@ -1109,7 +1109,7 @@ Transform:
   m_GameObject: {fileID: 1985571574364814613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4345, y: 0.4345, z: 0.4345}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3420139541916319261}
   - {fileID: 5447930105188633145}
@@ -1129,7 +1129,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.13316748, y: 1.0300306, z: 0.1583824}
-  m_Center: {x: -0.14623159, y: -0.069288306, z: 0.008955118}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4587393723989051010
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1247,7 +1247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5192298050378777288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.085, y: -0.546, z: 0.01}
+  m_LocalPosition: {x: 0.05, y: -0.546, z: 0.0023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8043190587296784899}
@@ -2794,8 +2794,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8991071460596333956}
   m_LocalRotation: {x: -0, y: -0.5607487, z: -0, w: 0.8279861}
-  m_LocalPosition: {x: -0.134, y: -0.013996184, z: 0.023}
-  m_LocalScale: {x: 0.11459763, y: 0.11459763, z: 0.11459763}
+  m_LocalPosition: {x: -0.008990228, y: -0.013996184, z: -0.0006904304}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 8043190587296784899}
   m_RootOrder: 2
@@ -2815,7 +2815,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8991071460596333956}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2860,5 +2860,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.5024901, y: 0.63446057, z: 0.40252492}
-  m_Center: {x: -0.042773116, y: 0.06180919, z: 0.013473721}
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
