@@ -21,6 +21,7 @@ public class GraveYard : MonoBehaviour
     {
         dagger.SetActive(false);
         enemyAmount = 5;
+        StartCoroutine("DaggerSpawn");
 
     }
 
@@ -43,5 +44,11 @@ public class GraveYard : MonoBehaviour
             Instantiate(enemy, spawnPoint, Quaternion.identity);
         }
 
+    }
+
+    IEnumerator DaggerSpawn()
+    {
+        yield return new WaitForSeconds(5f);
+        dagger.SetActive(true);
     }
 }

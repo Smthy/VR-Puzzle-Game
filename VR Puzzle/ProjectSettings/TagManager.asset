@@ -9,6 +9,10 @@ TagManager:
   - Hand
   - Bucket
   - Dagger
+  - Axe
+  - Enemy
+  - Key
+  - Staff
   layers:
   - Default
   - TransparentFX
@@ -25,8 +29,8 @@ TagManager:
   - GrabIgnoreRay
   - Body
   - Rock
-  - 
-  - 
+  - IGNORED
+  - Villager
   - 
   - 
   - 

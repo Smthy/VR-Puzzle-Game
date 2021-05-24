@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 404976734183244508}
   - component: {fileID: 2633784462011610561}
   - component: {fileID: 7328377194425183198}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pCube21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6252191446547419922}
   - component: {fileID: 7394462743491958125}
   - component: {fileID: 9040458432652434676}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pivot CUbe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,9 +188,9 @@ GameObject:
   - component: {fileID: 8663356933420339875}
   - component: {fileID: 1599197444930992182}
   - component: {fileID: 4983817252373314478}
-  m_Layer: 0
-  m_Name: Key
-  m_TagString: Untagged
+  m_Layer: 11
+  m_Name: Final Key
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
