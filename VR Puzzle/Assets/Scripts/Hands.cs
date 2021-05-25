@@ -12,7 +12,10 @@ public class Hands : MonoBehaviour
     public List<GameObject> controllerPrefabs;
     private InputDevice targetDevice;
 
-    public GameObject handPrefab;
+    public GameObject handPrefab, inventory;
+
+    public Transform active, deactive;
+
     private GameObject spawnedHandModel;
 
 
@@ -71,6 +74,19 @@ public class Hands : MonoBehaviour
         else
         {
             handAnimator.SetFloat("Grip", 0);
+        }
+
+        if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondary))
+        {
+            if (secondary)
+            {
+                Debug.Log("B Pressed: " + secondary + "\n");
+                inventory.transform.position = active.position;
+            }
+            if (!secondary)
+            {
+                inventory.transform.position = deactive.position;
+            }
         }
     }
 

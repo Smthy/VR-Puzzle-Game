@@ -76,6 +76,5 @@ public class ObjectPooler : MonoBehaviour
 
         yield return new WaitForSeconds(10f);
         StartCoroutine("Spawner");
-
     }
 }

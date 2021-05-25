@@ -5,19 +5,20 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float minX, maxX, minZ, maxZ;
-
     public NavMeshAgent agent;
-
     public GameObject player;
 
     public LayerMask ground, target;
 
-    public Vector3 walkpoint;
-    bool pointSet;
+    private Vector3 walkpoint;
+    bool travelling;
 
     public float sight, attack;
     public bool playerInRange, playerInSight;
+
+    public GameObject currentWaypoint;
+    GameObject previousWaypoint;
+    GameObject[] allWaypoints;
 
 
     void Start()
@@ -25,84 +26,76 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
 
-        StartCoroutine("WalkTimer");
+        allWaypoints = GameObject.FindGameObjectsWithTag("Node");
+        currentWaypoint = GetRandomWaypoint();
+        SetDestination();
+
     }
+
     void FixedUpdate()
     {
         playerInSight = Physics.CheckSphere(transform.position, sight, target);
         playerInRange = Physics.CheckSphere(transform.position, attack, target);
 
-        if(playerInSight && !playerInRange)
-        {
-            Following();
-        }
-        else if (playerInSight && playerInRange)
-        {
-            Attack();
-        }
-        else if(!playerInSight && !playerInRange)
+        if(!playerInSight && !playerInRange)
         {
             Wander();
         }
 
-
+        if (playerInSight && !playerInRange)
+        {
+            Following();
+        }
+        
+        if (playerInSight && playerInRange)
+        {
+            Attack();
+        }
+        
+        
     }
 
     void Wander()
     {
-        agent.speed = 6f;
-
-        if (!pointSet)
+        if (travelling && agent.remainingDistance <= 1f)
         {
-            SearchDestination();
-        }
-
-        if (pointSet)
-        {
-            agent.SetDestination(walkpoint);
-        }
-
-        Vector3 distanceToPoint = transform.position - walkpoint;
-
-        if (distanceToPoint.magnitude <= 1f)
-        {
-            pointSet = false;
+            travelling = false;
+            SetDestination();
         }
     }
 
     void Following()
     {
         agent.SetDestination(player.transform.position);
-        agent.speed = 6f;
+        agent.speed = 5f;
     }
 
     void Attack()
     {
         agent.SetDestination(player.transform.position);
-        agent.speed = 12f;
+        agent.speed = 6f;
     }
 
-    void SearchDestination()
+    void SetDestination()
     {
-        float randomX = Random.Range(minX, maxX);
-        float RandomZ = Random.Range(minZ, maxZ);
+        previousWaypoint = currentWaypoint;
+        currentWaypoint = GetRandomWaypoint();
 
-        walkpoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + RandomZ);
+        walkpoint = currentWaypoint.transform.position;
+        agent.SetDestination(walkpoint);
+        travelling = true;
+    }
 
-        if (Physics.Raycast(walkpoint, -transform.up, 2f, ground))
+    public GameObject GetRandomWaypoint()
+    {
+        if (allWaypoints.Length == 0)
         {
-            pointSet = true;
+            return null;
         }
-    }
-
-
-    IEnumerator WalkTimer()
-    {
-        yield return new WaitForSeconds(20f);
-        
-        pointSet = false;
-
-
-        StartCoroutine("WalkTimer");
+        else
+        {
+            int index = Random.Range(0, allWaypoints.Length);
+            return allWaypoints[index];
+        }
     }
 }

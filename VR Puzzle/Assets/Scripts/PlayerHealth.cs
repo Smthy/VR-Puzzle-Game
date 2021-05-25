@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
         SetMaxHealth(maxHealth);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (currentHealth > maxHealth)
         {
@@ -23,18 +24,17 @@ public class PlayerHealth : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            //Player Will Die;
+            SceneManager.LoadScene("End Scene");
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
+    
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
             TakeDamage();
         }
     }
-
 
     public void SetMaxHealth(int health)
     {
@@ -46,9 +46,6 @@ public class PlayerHealth : MonoBehaviour
     {
         slider.value = health;
     }
-
-
-
 
     public void TakeDamage()
     {

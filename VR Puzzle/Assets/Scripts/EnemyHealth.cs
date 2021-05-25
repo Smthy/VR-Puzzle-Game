@@ -16,19 +16,17 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.CompareTag("Sword"))
+        if (other.CompareTag("Sword"))
         {
             health -= swordDamage;
         }
 
-        if (collision.gameObject.CompareTag("Axe"))
+        if (other.CompareTag("Axe"))
         {
             health -= axeDamage;
         }
-
-
     }
 
     void Die()
