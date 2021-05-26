@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        SetMaxHealth(maxHealth);
+        SetMaxHealth(maxHealth);        //Uses a slider so the player can visible see the health
     }
 
     private void FixedUpdate()
@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            TakeDamage();
+            TakeDamage();           //take damage is set to the enemy damage which will cause the health to lower
         }
     }
 

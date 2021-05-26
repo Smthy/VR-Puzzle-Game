@@ -24,7 +24,7 @@ public class LocomotionController : MonoBehaviour
         if(TeleportRay)
         {
             bool hovering = rightRay.TryGetHitInfo(ref pos, ref norm, ref index, ref validTarget);
-            TeleportRay.gameObject.SetActive(enableTeleport && CheckIFActivated(TeleportRay) && !hovering);
+            TeleportRay.gameObject.SetActive(enableTeleport && CheckIFActivated(TeleportRay) && !hovering);         //Allows for the teleport ray to be disabled or enabled, teleportation is disabled in the game currently since it did not feel right.
         }
     }
 

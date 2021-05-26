@@ -15,14 +15,14 @@ public class FriendlyAI : MonoBehaviour
     
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();       //Using Navmesh to allow the AI to walk around
     }
 
 
     void Update()
     {
         float rDistance = Vector3.Distance(transform.position, enemy.transform.position);
-        float PDistance = Vector3.Distance(transform.position, player.transform.position);
+        float PDistance = Vector3.Distance(transform.position, player.transform.position);          //looking for distance from the player to look at
 
         if (rDistance < runDistance)
         {

@@ -10,7 +10,7 @@ public class EndGameSystem : MonoBehaviour
     {
         if(other.CompareTag("Staff"))
         {
-            Instantiate(endParticles, transform);
+            Instantiate(endParticles, transform);           //Sets a particle system then moves the player to the end scene
 
             SceneManager.LoadScene("End Scene");
         }

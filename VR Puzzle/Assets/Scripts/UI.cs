@@ -10,7 +10,7 @@ public class UI : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void QuitGame()
+    public void QuitGame() //The UI in the games menu is implemented for replayability if the users wishes to.
     {
         Application.Quit();
     }

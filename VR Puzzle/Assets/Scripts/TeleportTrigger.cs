@@ -6,7 +6,7 @@ public class TeleportTrigger : MonoBehaviour
 {
     public Transform player, teleporterPad;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)     //if the player hits this area, they will be teleported away
     {
         if(other.CompareTag("Player"))
         {

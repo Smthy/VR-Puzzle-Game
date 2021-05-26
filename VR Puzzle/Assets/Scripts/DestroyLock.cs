@@ -10,7 +10,7 @@ public class DestroyLock : MonoBehaviour
     {
         if(other.CompareTag("Key"))
         {
-            keyhold.SetActive(false);
+            keyhold.SetActive(false);               //destorys the lock if the player has the key
         }
 
     }

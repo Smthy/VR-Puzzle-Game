@@ -12,7 +12,7 @@ public class CrateDestruction : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Axe"))
-        {
+        {                                                       //Using the axe to break the crate to allow access to it, makes the player work for the key
             damageImpact();
         }
     }

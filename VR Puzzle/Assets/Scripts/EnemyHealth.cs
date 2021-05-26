@@ -19,8 +19,8 @@ public class EnemyHealth : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Sword"))
-        {
-            health -= swordDamage;
+        {   
+            health -= swordDamage;                      //uses collisions to identify which weapon has struck the damage
         }
 
         if (other.CompareTag("Axe"))

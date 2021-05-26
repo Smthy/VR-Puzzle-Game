@@ -13,7 +13,7 @@ public class TextTimeout : MonoBehaviour
         StartCoroutine("KillText");
     }
 
-    IEnumerator KillText()
+    IEnumerator KillText()              //destroys the text after a certain amount of time, currently set to 20 seconds
     {
         yield return new WaitForSeconds(textTimeOut);
 

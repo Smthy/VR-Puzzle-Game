@@ -18,7 +18,7 @@ public class OldWomenDaggerHolder : MonoBehaviour
     {
         if(other.CompareTag("Dagger"))
         {
-            text.text = ("Well Done, here is your potion!");
+            text.text = ("Well Done, here is your potion!");            //if the dagger is placed in the Unity XR Socket, it will active this.
             WaterBreathing.SetActive(true);
         }
     }

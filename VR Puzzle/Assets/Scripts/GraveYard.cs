@@ -39,9 +39,9 @@ public class GraveYard : MonoBehaviour
         {
             index = Random.Range(0, spawnArea.Length);
             currentSpawnArea = spawnArea[index];
-            Vector3 spawnPoint = new Vector3(currentSpawnArea.transform.position.x, currentSpawnArea.transform.position.y, currentSpawnArea.transform.position.z);
+            Vector3 spawnPoint = new Vector3(currentSpawnArea.transform.position.x, currentSpawnArea.transform.position.y, currentSpawnArea.transform.position.z);                  //Sets random spawn points, which are on the graveyards
 
-            Instantiate(enemy, spawnPoint, Quaternion.identity);
+            Instantiate(enemy, spawnPoint, Quaternion.identity);            //Instantiates due to small amount of AI that will be spawned into the world.
         }
 
     }
@@ -49,6 +49,6 @@ public class GraveYard : MonoBehaviour
     IEnumerator DaggerSpawn()
     {
         yield return new WaitForSeconds(5f);
-        dagger.SetActive(true);
+        dagger.SetActive(true);         //Once the player has started to walk into the graveyard the dagger is spawned in.
     }
 }

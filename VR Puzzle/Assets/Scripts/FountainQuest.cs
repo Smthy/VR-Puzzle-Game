@@ -22,7 +22,7 @@ public class FountainQuest : MonoBehaviour
             randomForceForward = Random.Range(10f, 30f);
             randomForceUp = Random.Range(1f, 10f);
 
-            Rigidbody rb = Instantiate(key, transform.position, Quaternion.identity).GetComponent<Rigidbody>(); 
+            Rigidbody rb = Instantiate(key, transform.position, Quaternion.identity).GetComponent<Rigidbody>();             //Uses physics to shoot the key in a direction to allow the key to be moved from the fountain, for the players benefit
             rb.AddForce(transform.up * randomForceUp, ForceMode.Impulse);
             rb.AddForce(transform.forward * randomForceForward, ForceMode.Impulse);
 

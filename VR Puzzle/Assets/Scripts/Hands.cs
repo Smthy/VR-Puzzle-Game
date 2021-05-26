@@ -44,7 +44,7 @@ public class Hands : MonoBehaviour
             if (prefab)
             {
                 spawned = Instantiate(prefab, transform);
-            }
+            }                                                                                                               //Checking which controller the player is user and will spawn that in, unless the hand prefabs are spawned in.
             else
             {
                 Debug.LogError("No controller");
@@ -68,7 +68,7 @@ public class Hands : MonoBehaviour
         }
 
         if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
-        {
+        {                                                                                       //Generic VR attributes to allow for the hand to follow the users hand motions
             handAnimator.SetFloat("Grip", gripValue);
         }
         else
@@ -83,7 +83,7 @@ public class Hands : MonoBehaviour
                 Debug.Log("B Pressed: " + secondary + "\n");
                 inventory.transform.position = active.position;
             }
-            if (!secondary)
+            if (!secondary)                                                                 //spawns the inventory in, which can hold up to 4 items.
             {
                 inventory.transform.position = deactive.position;
             }

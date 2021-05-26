@@ -10,7 +10,7 @@ public class DestroyFinalKey : MonoBehaviour
     {
         if (other.CompareTag("FinalKey"))
         {
-            keyhold.SetActive(false);
+            keyhold.SetActive(false);           //checks if it is the right key and not the other keys that are in the world
         }
 
     }

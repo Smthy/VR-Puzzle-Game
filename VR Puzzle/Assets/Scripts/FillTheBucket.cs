@@ -11,11 +11,11 @@ public class FillTheBucket : MonoBehaviour
         water.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)         //uses a trigger to identify if the bucket is there
     {
         if(other.CompareTag("Bucket"))
         {
-            water.SetActive(true);
+            water.SetActive(true);      //sets the bucket active, for the quest
         }
     }
 }

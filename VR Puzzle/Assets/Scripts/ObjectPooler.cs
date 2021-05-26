@@ -17,18 +17,18 @@ public class ObjectPooler : MonoBehaviour
     public int enemyMax = 20, currentAmount;
 
     public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary;    
+    public Dictionary<string, Queue<GameObject>> poolDictionary;    //Setting the queue to be a dictionary
 
     private void Awake()
     {
-        Instance = this;
+        Instance = this; //Only allows one of these in the game
     }
 
     void Start()
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (Pool pool in pools)
+        foreach (Pool pool in pools)        //Uses each pool in the pool dictionary
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
@@ -37,7 +37,7 @@ public class ObjectPooler : MonoBehaviour
                 GameObject obj = Instantiate(pool.prefab);
 
                 obj.SetActive(false);
-                objectPool.Enqueue(obj);
+                objectPool.Enqueue(obj);       //Adds them to the queue
             }
 
             poolDictionary.Add(pool.tag, objectPool);
@@ -57,7 +57,7 @@ public class ObjectPooler : MonoBehaviour
 
         GameObject objToSpawn = poolDictionary[tag].Dequeue();
                        
-        objToSpawn.SetActive(true);
+        objToSpawn.SetActive(true);                         //Uses the location and rotation of the objectpool to spawn in the AI
         objToSpawn.transform.position = pos;
         objToSpawn.transform.rotation = rotatation;
 
@@ -71,7 +71,7 @@ public class ObjectPooler : MonoBehaviour
         if(currentAmount < enemyMax)
         {
             currentAmount++;
-            Instance.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
+            Instance.SpawnFromPool("Enemy", transform.position, Quaternion.identity);   //Sets the active in the scene
         }
 
         yield return new WaitForSeconds(10f);

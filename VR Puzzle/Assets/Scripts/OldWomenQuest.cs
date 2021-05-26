@@ -12,7 +12,7 @@ public class OldWomenQuest : MonoBehaviour
         text.enabled = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)     //checks the collisions and outputs the text.
     {
         if (other.CompareTag("Player"))
         {
